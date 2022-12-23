@@ -98,17 +98,18 @@ public class DailyPlanner {
         System.out.println("\t 3 -> " + RepeatabilityOfTask.MONTHLY);
         System.out.println("\t 4 -> " + RepeatabilityOfTask.ANNUAL);
 
-
         Task task;
         RepeatabilityOfTask repeatabilityOfTask;
         int num = Integer.parseInt(scanner.nextLine());
         repeatabilityOfTask = RepeatabilityOfTask.values()[num];
         System.out.println(repeatabilityOfTask);
-        scanner.next();
 
         task = new Task(taskTitle, taskDescription, taskType, taskDateAndTime, repeatabilityOfTask);
         this.addTaskToMap(task);
-        System.out.println(task);
+        System.out.println("Обновленный список задач:");
+        for (Map.Entry<Integer, Task> entry : taskMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
     }
 
     public void removeTask(Scanner scanner) {
