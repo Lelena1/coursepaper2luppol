@@ -6,9 +6,6 @@ import java.util.*;
 public class DailyPlanner {
     private final Map<Integer, Task> taskMap = new HashMap<>();
 
-    public DailyPlanner() {
-
-    }
 
     public Map<Integer, Task> getTaskMap() {
         return taskMap;
